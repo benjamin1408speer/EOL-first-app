@@ -1,0 +1,130 @@
+.button-container {
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ padding: 0 70px;
+ align-items: center;
+ height: 100vh;
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ position: relative;
+ flex-direction: row;
+
+}
+
+.top{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.content{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+.button-menu {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Button 1 */
+.button-top:nth-child(1) {
+  padding: 20px 40px;
+  font-size: 34px;
+  background-color: aqua;
+  color: red;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.button-top:nth-child(1):hover {
+  background-color: purple;
+}
+
+/* Button 2 */
+.button-top:nth-child(2) {
+  padding: 20px 40px;
+  font-size: 33px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.button-top:nth-child(2):hover {
+  background-color: purple;
+}
+
+
+
+
+.input-container {
+  width: 500px;
+  padding: 10px ;
+  margin: 20px;
+}
+
+.input-container textarea {
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  color: black !important;
+  background-color: goldenrod;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+  resize: vertical;
+  text-align: center;
+}
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+.image-text {
+    width: 250px;
+    margin: 15px;
+    text-align: center;
+}
+.image-text img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+.image-text p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+}
+.zuruck{
+  display: flex;
+  width: 100%;
+  align-items: end;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.button{
+  padding: 10px 20px;
+  font-size: 22px;
+  bottom: 90px;
+  right: 70px;
+background-color: red;
+  color: blue;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+.button:hover {
+  background-color: purple;
+}

@@ -1,0 +1,35 @@
+<div class="button-container" [ngStyle]="{'background-image': `url(${this.selectedContent.image})`}">
+  <div class="top">
+    <button class="button-top" [routerLink]="['/']" (click)="onButtonClick(this.selectedContent.title)"><strong>Unsere Weltmeere</strong></button>
+    @if (selectedContent.title === 'Tierarten') {
+      <button class="button-top" ><strong>{{this.selectedContent.title}}</strong></button>
+    }@else {
+      <button class="button-top" ><strong>{{this.selectedContent.title}}</strong></button>
+    }
+  </div>
+  <div class="content">
+    <div class="menu-container">
+      
+        @for(myMenu of this.selectedContent.menu; track myMenu.id) {
+          @if(myMenu.buttonTitle === 'Tierarten') {
+            <button class="button-menu" (click)="onTierartenClick(this.selectedContent.id)"><strong>{{myMenu.buttonTitle}}</strong></button>
+          } @else {
+            <button class="button-menu" (click)="onButtonClick(myMenu.buttonTitle)"><strong>{{myMenu.buttonTitle}}</strong></button>
+          }
+          
+          }
+        
+    </div>
+  </div>
+
+
+  <div class="zuruck">
+    <div class="input-container">
+        <textarea id="generalInfo" [(ngModel)]="generalInfo" rows="8" cols="50" 
+        [placeholder]= "this.selectedContent.text">
+        </textarea>
+    </div>
+      <button class="button" [routerLink]="['../']" ><strong>Zurück</strong></button>
+    
+  </div>
+</div>

@@ -1,0 +1,44 @@
+
+
+@for(seg of myurl; track seg; let i = $index){
+<strong>{{i}}: {{seg.path}}</strong> -
+}
+<div class="button-container" >
+  <button class="button" [routerLink]="['/']" (click)="onButtonClick(1)"><strong>Unsere Weltmeere</strong></button>
+  <button class="button" ><strong>{{ocean?.title }}</strong></button>
+
+  <div class="zuruck">
+    
+    </div>
+      <button class="button" [routerLink]="['../']" ><strong>Zurück</strong></button>
+
+<h1> {{myurl[1].path }}</h1>
+
+
+
+
+@if(myurl[2].path == 'tierarten') {
+@if(myurl[3].path == 'fische') {
+{{ocean!.tiere}}
+}
+@if(myurl[3].path == 'voegel') {
+<h1>Vögel im Meer? Die gibt's hier nicht? Also was ist dann mit Pinguinen, Haubentauchern, Albatrossen etc?</h1>
+}
+@if(myurl[3].path == 'sauge') {
+<h1>Frösche sind das nicht!</h1>
+}
+@if(myurl[3].path == 'kruste') {
+<h1>Können kneifen!</h1>
+}
+}
+
+@if(myurl[2].path == 'klima') {
+{{ocean!.klimaText}} <br>
+}
+
+@if(myurl[2].path == 'tiefen') {
+{{ocean!.tiefe}} <br>
+{{ocean!.tiefeImage}} <br>
+{{ocean!.tiefeText}} <br>
+}
+

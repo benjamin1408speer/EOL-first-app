@@ -1,0 +1,25 @@
+
+
+<div class="button-container" >
+  <button class="button" [routerLink]="['/']" (click)="onButtonClick(1)"><strong>Unsere Weltmeere</strong></button>
+  <button class="button" ><strong>Die Ozeane der Welt</strong></button>
+  <button class="button" [routerLink]="['/oceans/pacific']" (click)="onButtonClick(3)"><strong>Pazifischer Ozean</strong></button>
+  <button class="button" [routerLink]="['/oceans/atlantic']" (click)="onButtonClick(4)"><strong>Atlantischer Ozean</strong></button>
+  <button class="button" [routerLink]="['/oceans/indic']" (click)="onButtonClick(5)"><strong>Indischer Ozean</strong></button>
+  <button class="button" [routerLink]="['/oceans/arctic']" (click)="onButtonClick(6)"><strong>Arktischer Ozean</strong></button>
+  <button class="button" [routerLink]="['/oceans/antarctic']"(click)="onButtonClick(7)"><strong>Antarktischer Ozean</strong></button>
+  <button class="button" [routerLink]="['/']" (click)="onButtonClick(8)"><strong>Zurück</strong></button>
+
+
+<div class="input-container">
+  <label for="generalInfo">Allgemeine Informationen über Meere:</label>
+  <textarea id="generalInfo" [(ngModel)]="generalInfo" rows="8" cols="50" 
+  placeholder="Ozeane sind die großen Weltmeere.
+
+Das sind der Atlantische Ozean, der Pazifische Ozean und der Indische Ozean.
+Dazu werden noch der Arktische Ozean und der Südliche Ozean als eigenständige Ozeane gezählt. 
+Man kann sie aber auch als Teil der drei großen Ozeane betrachten. ">
+</textarea>
+</div>
+
+</div>

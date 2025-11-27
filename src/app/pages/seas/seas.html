@@ -1,0 +1,24 @@
+
+<div class="button-container" >
+  <button class="button" [routerLink]="['/']" (click)="onButtonClick(1)"><strong>Unsere Weltmeere</strong></button>
+  <button class="button" ><strong>Die Meere</strong></button>
+  <button class="button" [routerLink]="['/seas/mittelmeer']" (click)="onButtonClick(3)"><strong>Mittelmeer</strong></button>
+  <button class="button" [routerLink]="['/seas/baltic']"(click)="onButtonClick(4)"><strong>Baltisches Meer</strong></button>
+  <button class="button" [routerLink]="['/seas/blacksea']"(click)="onButtonClick(5)"><strong>Schwarze Meer</strong></button>
+  <button class="button" [routerLink]="['/seas/redsea']" (click)="onButtonClick(6)"><strong>Rotes Meer</strong></button>
+  <button class="button" [routerLink]="['/seas/nordsee']"(click)="onButtonClick(7)"><strong>Nordsee</strong></button>
+  <button class="button" [routerLink]="['/']"  (click)="onButtonClick(8)"><strong>Zurück</strong></button>
+
+
+<div class="input-container">
+  <label for="generalInfo">Allgemeine Informationen über Meere:</label>
+  <textarea id="generalInfo" [(ngModel)]="generalInfo" rows="8" cols="50" 
+  placeholder="Die Meere der Erde, sind Nebenmeere, die an Landmassen angrenzen und oft durch Flüsse oder schmale Meerengen mit den Ozeanen verbunden sind. 
+
+Dazu gehören zum Beispiel die Ostsee, die Nordsee, das Mittelmeer und das Schwarze Meer. 
+
+Während Ozeane die großen, kontinentübergreifenden Wasserkörper sind, sind diese Nebenmeere kleinere, halb geschlossene Gewässer
+"></textarea>
+</div>
+
+</div>
