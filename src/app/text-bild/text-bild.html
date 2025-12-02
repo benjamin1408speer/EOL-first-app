@@ -1,44 +1,93 @@
-
-
-@for(seg of myurl; track seg; let i = $index){
-<strong>{{i}}: {{seg.path}}</strong> -
-}
-<div class="button-container" >
-  <button class="button" [routerLink]="['/']" (click)="onButtonClick(1)"><strong>Unsere Weltmeere</strong></button>
-  <button class="button" ><strong>{{ocean?.title }}</strong></button>
-
-  <div class="zuruck">
-    
+<div class="button-container" [ngStyle]="{'background-image': `url(${this.ocean?.tierartenimage})`}">
+  <div class="top">
+    <button class="button-top" [routerLink]="['/']"><strong>Unsere Weltmeere</strong></button>
+    <button class="button-top"><strong>{{this.ocean?.title}}</strong></button>
+  </div>
+  <div class="content">
+    <div class="menu-container">
     </div>
-      <button class="button" [routerLink]="['../']" ><strong>Zurück</strong></button>
 
-<h1> {{myurl[1].path }}</h1>
+    @if(myurl[2].path == 'tierarten'){
+    @if(myurl[3].path == 'fische') {
+    @if(ocean!.tierarten![0].name == myurl[3].path){
+    @for(tier of ocean!.tierarten![0].tiere; track $index) {
+    <div class="image-text">
 
+      @if (tier.bilder.length) {
+      <img [src]="tier.bilder[0]" alt="{{tier.name}} Bild">
+      }
+      <p><strong>{{tier.name}}</strong></p>
+    </div>
 
+    }
+    }
+    }
 
+    @if(myurl[3].path == 'voegel') {
+    @if(ocean!.tierarten![1].name == myurl[3].path){
+    @for(tier of ocean!.tierarten![1].tiere; track $index) {
+    <div class="image-text">
 
-@if(myurl[2].path == 'tierarten') {
-@if(myurl[3].path == 'fische') {
-{{ocean!.tiere}}
-}
-@if(myurl[3].path == 'voegel') {
-<h1>Vögel im Meer? Die gibt's hier nicht? Also was ist dann mit Pinguinen, Haubentauchern, Albatrossen etc?</h1>
-}
-@if(myurl[3].path == 'sauge') {
-<h1>Frösche sind das nicht!</h1>
-}
-@if(myurl[3].path == 'kruste') {
-<h1>Können kneifen!</h1>
-}
-}
+      @if (tier.bilder.length) {
+      <img [src]="tier.bilder[0]" alt="{{tier.name}} Bild">
+      }
+      <p><strong>{{tier.name}}</strong></p>
+    </div>
+    }
+    }
+    }
 
-@if(myurl[2].path == 'klima') {
-{{ocean!.klimaText}} <br>
-}
+    @if(myurl[3].path == 'sauge') {
+    @if(ocean!.tierarten![2].name == myurl[3].path){
+    @for(tier of ocean!.tierarten![2].tiere; track $index) {
+    <div class="image-text">
 
-@if(myurl[2].path == 'tiefen') {
-{{ocean!.tiefe}} <br>
-{{ocean!.tiefeImage}} <br>
-{{ocean!.tiefeText}} <br>
-}
+      @if (tier.bilder.length) {
+      <img [src]="tier.bilder[0]" alt="{{tier.name}} Bild">
+      }
+      <p><strong>{{tier.name}}</strong></p>
+    </div>
+    }
+    }
+    }
 
+    @if(myurl[3].path == 'kruste') {
+    @if(ocean!.tierarten![3].name == myurl[3].path){
+    @for(tier of ocean!.tierarten![3].tiere; track $index) {
+    <div class="image-text">
+
+      @if (tier.bilder.length) {
+      <img [src]="tier.bilder[0]" alt="{{tier.name}} Bild">
+      }
+      <p><strong>{{tier.name}}</strong></p>
+    </div>
+    }
+    }
+    }
+    }
+
+    @if(myurl[2].path == 'klima') {
+    <div class="image-text">
+      <img [src]="ocean?.klimaImage" alt="Tiefenprofil">
+      <div>
+      
+      <p>{{ocean!.klimaText}}</p>
+    </div>
+    </div>
+    }
+
+    @if(myurl[2].path == 'tiefen') {
+    <div class="image-text">
+      <img [src]="ocean?.tiefeImage" alt="Tiefenprofil">
+      <div>
+        <p><strong>Maximale Tiefe:</strong> {{ocean!.tiefe}}</p>
+        <p>{{ocean!.tiefeText}}</p>
+      </div>
+    </div>
+    }
+
+  </div>
+  <div class="zuruck">
+    <button class="button" [routerLink]="['../']"><strong>Zurück</strong></button>
+  </div>
+</div>

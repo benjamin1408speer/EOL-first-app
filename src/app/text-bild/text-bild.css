@@ -1,15 +1,17 @@
-.button-container {
+
+.button-container  {
+ min-height: 100vh;
  display: flex;
  flex-direction: column;
  justify-content: space-between;
  padding: 0 70px;
- align-items: center;
- height: 100vh;
+align-items: center;
+ min-height: 100vh;
  background-size: cover;
  background-position: center;
  background-repeat: no-repeat;
  position: relative;
- flex-direction: row;
+
 
 }
 
@@ -18,31 +20,41 @@
   justify-content: space-between;
   width: 100%;
   align-items: center;
+  padding: 20px 0;
 }
 
 .content{
   width: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: end;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-start;
+  padding: 20px;
 }
-
-.button-menu {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
+.zuruck{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  padding:  20px 0;
 }
-
-/* Button 1 */
-.button-top:nth-child(1) {
+.button-top {
   padding: 20px 40px;
-  font-size: 34px;
-  background-color: aqua;
-  color: red;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
+}
+
+
+/* Button 1 */
+.button-top:nth-child(1) {
+  font-size: 34px;
+  background-color: aqua;
+  color: red;
+  
 }
 .button-top:nth-child(1):hover {
   background-color: purple;
@@ -50,75 +62,17 @@
 
 /* Button 2 */
 .button-top:nth-child(2) {
-  padding: 20px 40px;
   font-size: 33px;
   background-color: green;
   color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
 }
 .button-top:nth-child(2):hover {
   background-color: purple;
 }
-
-
-
-
-.input-container {
-  width: 500px;
-  padding: 10px ;
-  margin: 20px;
-}
-
-.input-container textarea {
-  padding: 12px;
-  font-size: 14px;
-  font-weight: bold;
-  color: black !important;
-  background-color: goldenrod;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  width: 100%;
-  resize: vertical;
-  text-align: center;
-}
-.content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
-}
-.image-text {
-    width: 250px;
-    margin: 15px;
-    text-align: center;
-}
-.image-text img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-.image-text p {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #333;
-}
-.zuruck{
-  display: flex;
-  width: 100%;
-  align-items: end;
-  justify-content: flex-end;
-  margin-top: 20px;
-}
-
 .button{
   padding: 10px 20px;
   font-size: 22px;
-  bottom: 90px;
-  right: 70px;
-background-color: red;
+  background-color: red;
   color: blue;
   border: none;
   cursor: pointer;
@@ -128,3 +82,34 @@ background-color: red;
 .button:hover {
   background-color: purple;
 }
+
+.image-text {
+    width: 100%;
+    margin: 15px 0;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    
+}
+.image-text img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+.image-text p {
+    margin-top: 0;
+    width: 50%;
+    flex-grow: 0;
+    flex-shrink: 1;
+    font-size: 16px;
+    color: #333;
+    background-color: turquoise;
+}
+
+

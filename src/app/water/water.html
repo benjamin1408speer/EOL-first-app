@@ -1,19 +1,19 @@
-<h1>Selected: {{ocean?.id}}</h1>
 
-<div class="button-container" [ngStyle]="{'background-image': `url(${this.selectedContent.image})`}">
+
+<div class="button-container" [ngStyle]="{'background-image': `url(${this.ocean?.image})`}">
     <div class="top">
         <button class="button-top" [routerLink]="['/']"
-            (click)="onButtonClick(this.selectedContent.title)"><strong>Unsere Weltmeere</strong></button>
+            ><strong>Unsere Weltmeere</strong></button>
         <button class="button-top"><strong>{{this.ocean?.title}}</strong></button>
     </div>
     <div class="content">
         <div class="menu-container">
 
-            <!-- @for(spec of this.specs; track $index) { -->
+   
             <button class="button-menu" (click)="onTierartenClick()"><strong>Tierarten</strong></button>
             <button class="button-menu" (click)="onTiefenClick()"><strong>TiefenInfo</strong></button>
             <button class="button-menu" (click)="onKlimaClick()"><strong>Klima</strong></button>
-            <!-- } -->
+          
 
         </div>
     </div>
@@ -22,7 +22,7 @@
      <div class="zuruck">
         <div class="input-container">
             <textarea id="generalInfo" [(ngModel)]="generalInfo" rows="8" cols="50"
-                [placeholder]="this.selectedContent.text">
+                [placeholder]="this.ocean?.text">
         </textarea>
         </div>
         <button class="button" [routerLink]="['../']"><strong>Zurück</strong></button>

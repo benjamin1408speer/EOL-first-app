@@ -3,16 +3,7 @@ import { Seas } from './pages/seas/seas';
 import { Oceans } from './pages/oceans/oceans';
 
 import { Home } from './home/home';
-import { Pacific } from './pacific/pacific';
-import { Atlantic } from './atlantic/atlantic';
-import { Indic } from './indic/indic';
-import { Arctic } from './arctic/arctic';
-import { Antarctic } from './antarctic/antarctic';
-import { Mittelmeer } from './mittelmeer/mittelmeer';
-import { Baltic } from './baltic/baltic';
-import { Blacksea } from './blacksea/blacksea';
-import { Redsea } from './redsea/redsea';
-import { Nordsee } from './nordsee/nordsee';
+
 
 import { TextBild } from './text-bild/text-bild';
 import { Water } from './water/water';

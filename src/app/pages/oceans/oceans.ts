@@ -24,8 +24,6 @@ export class Oceans {
   backgroundImage(): string {
      return "/assets/images/meer.jpg";
   }
-  onButtonClick(buttonNumber: number): void {
-    console.log(`Button ${buttonNumber} wurde geklickt!`);
-}
+  
 }
 

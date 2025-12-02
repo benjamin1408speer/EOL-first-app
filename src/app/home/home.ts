@@ -21,7 +21,5 @@ export class Home {
   backgroundImage(): string {
      return "/assets/images/welt.jpg";
   }
-  onButtonClick(buttonNumber: number): void {
-    console.log(`Button ${buttonNumber} wurde geklickt!`);
-}
+  
 }
