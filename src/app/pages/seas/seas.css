@@ -17,7 +17,7 @@
   cursor: pointer;
 }
 
-/* Button 1 */
+
 .button:nth-child(1) {
   padding: 20px 40px;
   font-size: 34px;
@@ -33,7 +33,7 @@
   background-color: purple;
 }
 
-/* Button 2 */
+
 .button:nth-child(2) {
   padding: 20px 40px;
   font-size: 35px;
@@ -47,7 +47,7 @@
 }
 
 
-/* Button 3 */
+
 .button:nth-child(3) {
    padding: 10px 35px;
    font-size: 22px;
@@ -63,7 +63,7 @@
   background-color: purple;
 }
 
-/* Button 4 */
+
 .button:nth-child(4) {
   padding: 10px 10px;
   font-size: 22px;
@@ -79,7 +79,7 @@
   background-color: purple;
 }
 
-/* Button 5 */
+
 .button:nth-child(5) {
   padding: 10px 13px;
   font-size: 22px;

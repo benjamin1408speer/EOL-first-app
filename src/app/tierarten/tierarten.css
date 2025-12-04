@@ -32,7 +32,7 @@
   cursor: pointer;
 }
 
-/* Button 1 */
+
 .button-top:nth-child(1) {
   padding: 20px 40px;
   font-size: 34px;
@@ -46,7 +46,7 @@
   background-color: purple;
 }
 
-/* Button 2 */
+
 .button-top:nth-child(2) {
   padding: 20px 40px;
   font-size: 33px;
@@ -65,7 +65,7 @@
   padding: 20px;
 }
 
-/* Button 3 */
+
 .button-menu {
   width: 100%;
   padding: 10px 40px;

@@ -16,7 +16,7 @@ export class DataService {
 
 
   contents: ContentA[] = [
-    /*Id Ozeane */
+   
     {
       id: 'pacific',
       title: 'Der Pazifik',

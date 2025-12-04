@@ -108,86 +108,18 @@ export class Water {
     console.log('onFischeClick:', route)
     this.router.navigate([route])
   }
- 
-
-
- 
-
-  //   if (id == 1) {
-  //     this.router.navigate(['oceans/pacific/tiefen'])
-  //   }
-  //   if (id == 2) {
-  //     this.router.navigate(['oceans/indic/tiefen'])
-  //   }
-  //   if (id == 3) {
-  //     this.router.navigate(['oceans/atlantic/tiefen'])
-  //   }
-  //   if (id == 4) {
-  //     this.router.navigate(['oceans/arctic/tiefen'])
-  //   }
-  //   if (id == 5) {
-  //     this.router.navigate(['oceans/antarctic/tiefen'])
-  //   }
-  //   if (id == 6) {
-  //     this.router.navigate(['seas/mittelmeer/tiefen'])
-  //   }
-  //   if (id == 7) {
-  //     this.router.navigate(['seas/baltic/tiefen'])
-  //   }
-  //   if (id == 8) {
-  //     this.router.navigate(['seas/blacksea/tiefen'])
-  //   }
-  //   if (id == 9) {
-  //     this.router.navigate(['seas/redsea/tiefen'])
-  //   }
-  //   if (id == 10) {
-  //     this.router.navigate(['seas/nordsee/tiefen'])
-  //   }
-  // }
-  // onKlimaClick(id: number) {
-
-  //   if (id == 1) {
-  //     this.router.navigate(['oceans/pacific/klima'])
-  //   }
-  //   if (id == 2) {
-  //     this.router.navigate(['oceans/indic/klima'])
-  //   }
-  //   if (id == 3) {
-  //     this.router.navigate(['oceans/atlantic/klima'])
-  //   }
-  //   if (id == 4) {
-  //     this.router.navigate(['oceans/arctic/klima'])
-  //   }
-  //   if (id == 5) {
-  //     this.router.navigate(['oceans/antarctic/klima'])
-  //   }
-  //   if (id == 6) {
-  //     this.router.navigate(['seas/mittelmeer/klima'])
-  //   }
-  //   if (id == 7) {
-  //     this.router.navigate(['seas/baltic/klima'])
-  //   }
-  //   if (id == 8) {
-  //     this.router.navigate(['seas/blacksea/klima'])
-  //   }
-  //   if (id == 9) {
-  //     this.router.navigate(['seas/redsea/klima'])
-  //   }
-  //   if (id == 10) {
-  //     this.router.navigate(['seas/nordsee/klima'])
-  //   }
-
-  // }
-
-
-
-
-
-
-
-  //  rest irgendwann mal in einen service auslagern
-
-
-
-
 }
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+
+  

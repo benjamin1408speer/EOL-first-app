@@ -49,7 +49,7 @@ align-items: center;
 }
 
 
-/* Button 1 */
+
 .button-top:nth-child(1) {
   font-size: 34px;
   background-color: aqua;
@@ -60,7 +60,7 @@ align-items: center;
   background-color: purple;
 }
 
-/* Button 2 */
+
 .button-top:nth-child(2) {
   font-size: 33px;
   background-color: green;
