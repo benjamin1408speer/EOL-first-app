@@ -16,8 +16,14 @@ import { DataService } from '../data-service';
   styleUrl: './water.css',
 })
 export class Water {
+  // ActivatedRoute wird injiziert, um Zugriff auf die aktuelle URL und deren Parameter zu erhalten.
   route = inject(ActivatedRoute)
+
+  // DataService wird injiziert, um die Inhalte (Texte, Bilder) zu laden.
   dataservice = inject(DataService)
+
+  // Der Router wird benötigt, um programmgesteuert zu navigieren (z.B. bei Klicks auf Buttons).
+  router = inject(Router)
 
   myurl: UrlSegment[] = []
 
@@ -29,9 +35,7 @@ export class Water {
   }
 
   fupa: string[] = []
-  selectedContent!: ContentA
-  router = inject(Router)
-  selectedMeerOzean!: string
+
   generalInfo: string = ''
 
   oceanseas: string = ''
@@ -41,28 +45,38 @@ export class Water {
 
   contents = this.dataservice.GetAll()
 
+  // ngOnInit() ist ein "Lifecycle Hook", der beim Start der Komponente ausgeführt wird.
   ngOnInit() {
+    // 1. Gesamte URL-Struktur auslesen
     this.fullUrl()
     this.fupa = this.fullUrlArr()
-    this.oceanseas = this.fupa[0]
-    this.watername = this.fupa[1]
-    this.waterspec = this.fupa[2]
-    this.animal = this.fupa[3]
 
+    // 2. Die einzelnen Teile der URL (Segmente) in Variablen speichern
+    // Beispiel-URL: /oceans/pacific/tierarten/fische
+    this.oceanseas = this.fupa[0] // z.B. 'oceans'
+    this.watername = this.fupa[1] // z.B. 'pacific'
+    this.waterspec = this.fupa[2] // z.B. 'tierarten'
+    this.animal = this.fupa[3]    // z.B. 'fische' (kann auch undefined sein)
+
+    // 3. Den aktuellen Ozean-Namen aus der URL holen
     this.myurl = this.route.snapshot.url
-    let oceanName = this.myurl[1].path
 
+    // Warnung: Wir nehmen an, dass 'watername' an Index 1 steht. Das ist bei /oceans/:id korrekt.
+    let oceanName = this.myurl[1]?.path || this.watername;
+
+    // 4. passenden Inhalt aus dem DataService laden
     this.ocean =  this.dataservice.GetOcean(oceanName)
-    
   }
 
 
+  // Diese Methode baut den kompletten Pfad der URL als String zusammen.
+  // Das ist nützlich, um relative Navigation durchzuführen.
   fullUrl() {
     let fullUrlPath = this.route.snapshot.pathFromRoot
       .map(ele => ele.url)
       .map(urlobj => urlobj.filter(upath => upath.path).join('/'))
       .join('/')
-    console.log('text-bild:', fullUrlPath)
+    console.log('Aktueller Pfad:', fullUrlPath)
     return fullUrlPath
   }
 
@@ -77,7 +91,7 @@ export class Water {
   }
 
 
-  
+
 
   onTierartenClick() {
     let route = this.fullUrl() + '/' + 'tierarten'
@@ -109,10 +123,6 @@ export class Water {
     this.router.navigate([route])
   }
 }
- 
-
-
- 
 
 
 
@@ -122,4 +132,8 @@ export class Water {
 
 
 
-  
+
+
+
+
+

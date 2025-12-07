@@ -13,88 +13,51 @@ import { Tierarten } from './tierarten/tierarten';
 
 
 
+// Die Routen-Konfiguration definiert, welche Komponente bei welcher URL angezeigt wird.
 export const routes: Routes = [
+    // Standard-Weiterleitung: Wenn die URL leer ist (Basis-Pfad), leite auf '/home' um.
+    // 'pathMatch: full' stellt sicher, dass dies nur bei exakt leerem Pfad passiert.
     { path: '', redirectTo: '/home', pathMatch: 'full' },
+
+    // Die Startseite der Anwendung
     { path: 'home', component: Home },
-    
 
-    { path: 'oceans', component: Oceans },
-    { path: 'oceans/pacific', component: Water, },
-    { path: 'oceans/pacific/tierarten', component: Tierarten, },
-    { path: 'oceans/pacific/tiefen', component: TextBild, },
-    { path: 'oceans/pacific/klima', component: TextBild, },
-    { path: 'oceans/pacific/tierarten/:tier', component: TextBild, },
-   
-    { path: 'oceans', component: Oceans },
-    { path: 'oceans/atlantic', component: Water, },
-    { path: 'oceans/atlantic/tierarten', component: Tierarten, },
-    { path: 'oceans/atlantic/tiefen', component: TextBild, },
-    { path: 'oceans/atlantic/klima', component: TextBild, },
-    { path: 'oceans/atlantic/tierarten/:tier', component: TextBild, },
+    // Dynamische Route für Ozeane (z.B. /oceans/pacific, /oceans/atlantic)
+    // ':id' ist ein Platzhalter (Parameter), der den spezifischen Ozean angibt.
+    {
+        path: 'oceans/:id',
+        component: Water,
+    },
 
-    { path: 'oceans', component: Oceans },
-    { path: 'oceans/indic', component: Water, },
-    { path: 'oceans/indic/tierarten', component: Tierarten, },
-    { path: 'oceans/indic/tiefen', component: TextBild, },
-    { path: 'oceans/indic/klima', component: TextBild, },
-    { path: 'oceans/indic/tierarten/:tier', component: TextBild, },
+    // Kind-Routen für spezifische Informationen zu einem Ozean
+    // Diese Struktur erlaubt URLs wie: /oceans/pacific/tierarten
+    { path: 'oceans/:id/tierarten', component: Tierarten },
+    { path: 'oceans/:id/tiefen', component: TextBild },
+    { path: 'oceans/:id/klima', component: TextBild },
 
-    { path: 'oceans', component: Oceans },
-    { path: 'oceans/arctic', component: Water, },
-    { path: 'oceans/arctic/tierarten', component: Tierarten, },
-    { path: 'oceans/arctic/tiefen', component: TextBild, },
-    { path: 'oceans/arctic/klima', component: TextBild, },
-    { path: 'oceans/arctic/tierarten/:tier', component: TextBild, },
+    // Eine weitere Verschachtelung für spezifische Tierarten innerhalb eines Ozeans
+    // URL-Beispiel: /oceans/pacific/tierarten/fische
+    { path: 'oceans/:id/tierarten/:tier', component: TextBild },
 
-    { path: 'oceans', component: Oceans },
-    { path: 'oceans/antarctic', component: Water, },
-    { path: 'oceans/antarctic/tierarten', component: Tierarten, },
-    { path: 'oceans/antarctic/tiefen', component: TextBild, },
-    { path: 'oceans/antarctic/klima', component: TextBild, },
-    { path: 'oceans/antarctic/tierarten/:tier', component: TextBild, },
-
-    
+    // Ähnliche Struktur für Meere (Seas)
+    // Hier wird die Komponente 'Seas' als Übersicht genutzt
     { path: 'seas', component: Seas },
-    { path: 'seas/mittelmeer', component: Water, },
-    { path: 'seas/mittelmeer/tierarten', component: Tierarten, },
-    { path: 'seas/mittelmeer/tiefen', component: TextBild, },
-    { path: 'seas/mittelmeer/klima', component: TextBild, },
-    { path: 'seas/mittelmeer/tierarten/:tier', component: TextBild, },
 
-    { path: 'seas', component: Seas },
-    { path: 'seas/baltic', component: Water, },
-    { path: 'seas/baltic/tierarten', component: Tierarten, },
-    { path: 'seas/baltic/tiefen', component: TextBild, },
-    { path: 'seas/baltic/klima', component: TextBild, },
-    { path: 'seas/baltic/tierarten/:tier', component: TextBild, },
+    // Dynamische Route für einzelne Meere (z.B. /seas/mittelmeer)
+    { path: 'seas/:id', component: Water },
+    { path: 'seas/:id/tierarten', component: Tierarten },
+    { path: 'seas/:id/tiefen', component: TextBild },
+    { path: 'seas/:id/klima', component: TextBild },
+    { path: 'seas/:id/tierarten/:tier', component: TextBild },
 
-    { path: 'seas', component: Seas },
-    { path: 'seas/blacksea', component: Water, },
-    { path: 'seas/blacksea/tierarten', component: Tierarten, },
-    { path: 'seas/blacksea/tiefen', component: TextBild, },
-    { path: 'seas/blacksea/klima', component: TextBild, },
-    { path: 'seas/blacksea/tierarten/:tier', component: TextBild, },
-
-    { path: 'seas', component: Seas },
-    { path: 'seas/redsea', component: Water, },
-    { path: 'seas/redsea/tierarten', component: Tierarten, },
-    { path: 'seas/redsea/tiefen', component: TextBild, },
-    { path: 'seas/redsea/klima', component: TextBild, },
-    { path: 'seas/redsea/tierarten/:tier', component: TextBild, },
-
-    { path: 'seas', component: Seas },
-    { path: 'seas/nordsee', component: Water, },
-    { path: 'seas/nordsee/tierarten', component: Tierarten, },
-    { path: 'seas/nordsee/tiefen', component: TextBild, },
-    { path: 'seas/nordsee/klima', component: TextBild, },
-    { path: 'seas/nordsee/tierarten/:tier', component: TextBild, },
-
-   { path: '**', redirectTo: ''}
-]
-                
-                
-            
+    // Wildcard-Route: Fängt alle unbekannten URLs ab und leitet zur Startseite zurück.
+    // Dies verhindert Fehlerseiten, wenn der Benutzer eine falsche URL eingibt.
+    { path: '**', redirectTo: '' }
+];
 
 
-        
-    
+
+
+
+
+
